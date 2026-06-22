@@ -1,0 +1,41 @@
+{
+  "meta": { "checkin": "2026-07-10", "checkout": "2026-07-12", "nights": 2, "adults": 2, "currency": "EUR", "source": "Booking.com" },
+  "cities": {
+    "lisbona":   { "name": "Lisbona",   "country": "Portogallo", "img": "https://images.unsplash.com/photo-1748279944004-f1d733dc711b?auto=format&fit=crop&w=900&q=70" },
+    "cracovia":  { "name": "Cracovia",  "country": "Polonia",    "img": "https://images.unsplash.com/photo-1719049811676-72c3409df39d?auto=format&fit=crop&w=900&q=70" },
+    "valencia":  { "name": "Valencia",  "country": "Spagna",     "img": "https://images.unsplash.com/photo-1719401542194-95139aed215c?auto=format&fit=crop&w=900&q=70" },
+    "atene":     { "name": "Atene",     "country": "Grecia",     "img": "https://images.unsplash.com/photo-1603565816030-6b389eeb23cb?auto=format&fit=crop&w=900&q=70" },
+    "tenerife":  { "name": "Tenerife",  "country": "Canarie",    "img": "https://images.unsplash.com/photo-1605182054023-17d71f44aa11?auto=format&fit=crop&w=900&q=70" },
+    "marrakech": { "name": "Marrakech", "country": "Marocco",    "img": "https://images.unsplash.com/photo-1561642769-1bca263542e0?auto=format&fit=crop&w=900&q=70" }
+  },
+  "stays": [
+    { "city": "marrakech", "name": "Hotel Central Palace", "type": "Hotel", "area": "Medina", "price": 48, "score": null, "stars": null, "url": "https://www.booking.com/hotel/ma/central-palace.html?aid=8132308&checkin=2026-07-10&checkout=2026-07-12&no_rooms=1&group_adults=2&selected_currency=EUR" },
+    { "city": "marrakech", "name": "Riad Saad", "type": "Riad", "area": "Medina", "price": 98, "score": 8.2, "stars": 3, "url": "https://www.booking.com/hotel/ma/ryad-saad.html?aid=8132308&checkin=2026-07-10&checkout=2026-07-12&no_rooms=1&group_adults=2&selected_currency=EUR" },
+    { "city": "marrakech", "name": "Riad dar lakbira", "type": "Riad", "area": "Medina", "price": 110, "score": 9.2, "stars": 3, "url": "https://www.booking.com/hotel/ma/riad-dar-lakbira.html?aid=8132308&checkin=2026-07-10&checkout=2026-07-12&no_rooms=1&group_adults=2&selected_currency=EUR" },
+    { "city": "marrakech", "name": "Riad Tahar Oasis", "type": "Riad", "area": "Medina", "price": 113, "score": 8.4, "stars": 4, "url": "https://www.booking.com/hotel/ma/riad-tahar-oasis.html?aid=8132308&checkin=2026-07-10&checkout=2026-07-12&no_rooms=1&group_adults=2&selected_currency=EUR" },
+
+    { "city": "tenerife", "name": "CHC - El Peregrino", "type": "Camere", "area": "Las Cruces", "price": 60, "score": null, "stars": 3, "url": "https://www.booking.com/hotel/es/chc-el-peregrino-1.html?aid=8132308&checkin=2026-07-10&checkout=2026-07-12&no_rooms=1&group_adults=2&selected_currency=EUR" },
+    { "city": "tenerife", "name": "Rooms City", "type": "Camere", "area": "San Isidro", "price": 63, "score": null, "stars": null, "url": "https://www.booking.com/hotel/es/petite-city-room.html?aid=8132308&checkin=2026-07-10&checkout=2026-07-12&no_rooms=1&group_adults=2&selected_currency=EUR" },
+    { "city": "tenerife", "name": "Alma Del Sur Tenerife", "type": "B&B", "area": "Arona", "price": 110, "score": 9.5, "stars": 3, "url": "https://www.booking.com/hotel/es/alma-del-sur-tenerife.html?aid=8132308&checkin=2026-07-10&checkout=2026-07-12&no_rooms=1&group_adults=2&selected_currency=EUR" },
+    { "city": "tenerife", "name": "Apartamentos Monasterio de San Antonio", "type": "Appartamento", "area": "Icod de los Vinos", "price": 112, "score": 7.9, "stars": 4, "url": "https://www.booking.com/hotel/es/apartamentos-san-antonio.html?aid=8132308&checkin=2026-07-10&checkout=2026-07-12&no_rooms=1&group_adults=2&selected_currency=EUR" },
+
+    { "city": "atene", "name": "Beehive Mini Rooms", "type": "Camere", "area": "Centro", "price": 71, "score": 8.0, "stars": 3, "url": "https://www.booking.com/hotel/gr/beehive-mini-rooms-athena.html?aid=8132308&checkin=2026-07-10&checkout=2026-07-12&no_rooms=1&group_adults=2&selected_currency=EUR" },
+    { "city": "atene", "name": "Liberal Gazi", "type": "Hotel", "area": "Kerameikos", "price": 89, "score": 7.4, "stars": 3, "url": "https://www.booking.com/hotel/gr/liberal.html?aid=8132308&checkin=2026-07-10&checkout=2026-07-12&no_rooms=1&group_adults=2&selected_currency=EUR" },
+    { "city": "atene", "name": "Athens Commercial Premium", "type": "Hotel", "area": "Centro", "price": 97, "score": 7.1, "stars": 3, "url": "https://www.booking.com/hotel/gr/athens-commercial-premium.html?aid=8132308&checkin=2026-07-10&checkout=2026-07-12&no_rooms=1&group_adults=2&selected_currency=EUR" },
+    { "city": "atene", "name": "Hotel Cosmos", "type": "Hotel", "area": "Centro", "price": 107, "score": 8.1, "stars": 2, "url": "https://www.booking.com/hotel/gr/cosmos-athens.html?aid=8132308&checkin=2026-07-10&checkout=2026-07-12&no_rooms=1&group_adults=2&selected_currency=EUR" },
+
+    { "city": "lisbona", "name": "Room Lisboa", "type": "Ostello", "area": "Av. da Liberdade", "price": 93, "score": null, "stars": null, "url": "https://www.booking.com/hotel/pt/room00-lisboa-hostel.html?aid=8132308&checkin=2026-07-10&checkout=2026-07-12&no_rooms=1&group_adults=2&selected_currency=EUR" },
+    { "city": "lisbona", "name": "Suites - António Pedro", "type": "Appartamento", "area": "Arroios", "price": 116, "score": null, "stars": null, "url": "https://www.booking.com/hotel/pt/apartamento-antonio-pedro.html?aid=8132308&checkin=2026-07-10&checkout=2026-07-12&no_rooms=1&group_adults=2&selected_currency=EUR" },
+    { "city": "lisbona", "name": "Big Choice - Lisbon", "type": "Appartamento", "area": "Centro storico", "price": 124, "score": null, "stars": null, "url": "https://www.booking.com/hotel/pt/big-choice-lisbon.html?aid=8132308&checkin=2026-07-10&checkout=2026-07-12&no_rooms=1&group_adults=2&selected_currency=EUR" },
+    { "city": "lisbona", "name": "Be Lisbon Hostel Intendente", "type": "Ostello", "area": "Intendente", "price": 124, "score": null, "stars": null, "url": "https://www.booking.com/hotel/pt/be-lisbon-hostel-intendente.html?aid=8132308&checkin=2026-07-10&checkout=2026-07-12&no_rooms=1&group_adults=2&selected_currency=EUR" },
+
+    { "city": "cracovia", "name": "Hostel u Kmity", "type": "Ostello", "area": "Centro storico", "price": 111, "score": null, "stars": null, "url": "https://www.booking.com/hotel/pl/white-eagle-hostel.html?aid=8132308&checkin=2026-07-10&checkout=2026-07-12&no_rooms=1&group_adults=2&selected_currency=EUR" },
+    { "city": "cracovia", "name": "Flamingo Premium Hostel", "type": "Ostello", "area": "Centro storico", "price": 120, "score": null, "stars": null, "url": "https://www.booking.com/hotel/pl/flamingo-hostel.html?aid=8132308&checkin=2026-07-10&checkout=2026-07-12&no_rooms=1&group_adults=2&selected_currency=EUR" },
+    { "city": "cracovia", "name": "Metropolo by Golden Tulip", "type": "Hotel", "area": "Lagiewniki", "price": 124, "score": 8.9, "stars": 4, "url": "https://www.booking.com/hotel/pl/metropolo-by-golden-tulip-krakow.html?aid=8132308&checkin=2026-07-10&checkout=2026-07-12&no_rooms=1&group_adults=2&selected_currency=EUR" },
+    { "city": "cracovia", "name": "Aparthotel Maargick", "type": "Aparthotel", "area": "Podgórze", "price": 129, "score": 8.3, "stars": 3, "url": "https://www.booking.com/hotel/pl/aparthotel-maargick.html?aid=8132308&checkin=2026-07-10&checkout=2026-07-12&no_rooms=1&group_adults=2&selected_currency=EUR" },
+
+    { "city": "valencia", "name": "Apartment close to everything!", "type": "Appartamento", "area": "Camins al Grau", "price": 126, "score": null, "stars": null, "url": "https://www.booking.com/hotel/es/apartment-close-to-everything-valencia.html?aid=8132308&checkin=2026-07-10&checkout=2026-07-12&no_rooms=1&group_adults=2&selected_currency=EUR" },
+    { "city": "valencia", "name": "Urban Youth Hostel", "type": "Ostello", "area": "Poblats Maritims", "price": 148, "score": null, "stars": null, "url": "https://www.booking.com/hotel/es/urban-youth-hostel.html?aid=8132308&checkin=2026-07-10&checkout=2026-07-12&no_rooms=1&group_adults=2&selected_currency=EUR" },
+    { "city": "valencia", "name": "Aiora Hostel", "type": "Ostello", "area": "Camins al Grau", "price": 154, "score": null, "stars": null, "url": "https://www.booking.com/hotel/es/aiora-hostel.html?aid=8132308&checkin=2026-07-10&checkout=2026-07-12&no_rooms=1&group_adults=2&selected_currency=EUR" }
+  ]
+}

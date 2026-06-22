@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MEG Travel — cerca dove ti porta il budget</title>
+<meta name="description" content="Dimmi quanto hai: ti mostro dove dormire davvero, sotto budget. Dati e prezzi reali.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  body{background:var(--ink);color:var(--paper)}
+  .srch-nav{display:flex;align-items:center;justify-content:space-between;height:60px;max-width:1120px;margin-inline:auto;padding-inline:var(--pad)}
+  .srch-back{display:inline-flex;align-items:center;gap:.4rem;color:rgba(255,255,255,.75);font-size:.95rem}
+  .srch-back:hover{color:#fff}
+  .srch-head{max-width:1120px;margin-inline:auto;padding:1.2rem var(--pad) 0}
+  .srch-eyebrow{font-family:var(--font-mono);font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;color:var(--teal-bright);margin-bottom:.9rem}
+  .srch-title{font-family:var(--font-display);font-weight:800;letter-spacing:-.03em;line-height:1.02;font-size:clamp(2.1rem,6vw,3.6rem)}
+  .srch-sub{color:rgba(255,255,255,.66);margin-top:.7rem;font-size:.95rem;max-width:60ch}
+
+  .panel{max-width:1120px;margin:1.6rem auto 0;padding:1.3rem var(--pad);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:var(--r-lg)}
+  .panel__grid{display:grid;grid-template-columns:1.4fr 1fr auto;gap:1.2rem 1.6rem;align-items:end}
+  .field{min-width:0}
+  .field__label{display:flex;justify-content:space-between;font-size:.82rem;color:rgba(255,255,255,.7);margin-bottom:.5rem}
+  .field__label b{color:#fff;font-weight:500;font-family:var(--font-mono)}
+  .srch-slider{width:100%;-webkit-appearance:none;appearance:none;height:6px;border-radius:999px;background:rgba(255,255,255,.22);cursor:pointer}
+  .srch-slider::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:26px;height:26px;border-radius:50%;background:var(--teal-bright);border:4px solid rgba(255,255,255,.92);box-shadow:0 6px 16px -4px rgba(0,0,0,.6)}
+  .srch-slider::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:var(--teal-bright);border:4px solid #fff}
+  select.srch-select{width:100%;height:44px;border-radius:12px;border:1px solid rgba(255,255,255,.2);background:rgba(0,0,0,.25);color:#fff;font-family:var(--font-text);font-size:1rem;padding:0 .8rem}
+  select.srch-select option{color:#111}
+  .srch-surprise{height:44px;border-radius:999px;border:1px solid var(--teal-bright);background:transparent;color:var(--teal-bright);font-family:var(--font-text);font-weight:500;font-size:.95rem;padding:0 1.2rem;cursor:pointer;white-space:nowrap}
+  .srch-surprise:hover{background:var(--teal-bright);color:var(--ink)}
+  .panel__note{margin-top:1rem;font-size:.76rem;color:rgba(255,255,255,.5);line-height:1.5}
+
+  .results-head{max-width:1120px;margin:1.6rem auto .4rem;padding-inline:var(--pad);font-size:.9rem;color:rgba(255,255,255,.7)}
+  .results-head b{color:#fff;font-weight:500}
+  .grid{max-width:1120px;margin:0 auto;padding:.6rem var(--pad) 3rem;display:grid;grid-template-columns:repeat(auto-fill,minmax(248px,1fr));gap:16px}
+  .stay{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:var(--r-lg);overflow:hidden;display:flex;flex-direction:column;transition:transform .15s ease,border-color .15s ease}
+  .stay:hover{transform:translateY(-3px);border-color:rgba(255,255,255,.28)}
+  .stay.flash{border-color:var(--teal-bright);box-shadow:0 0 0 2px var(--teal-bright)}
+  .stay__img{height:130px;background:#0e1413 center/cover no-repeat;position:relative}
+  .stay__city{position:absolute;left:10px;bottom:8px;font-family:var(--font-display);font-weight:700;font-size:1.05rem;text-shadow:0 1px 12px rgba(0,0,0,.7)}
+  .stay__city span{font-family:var(--font-text);font-weight:400;font-size:.76rem;color:rgba(255,255,255,.8);margin-left:.35rem}
+  .stay__body{padding:.85rem .95rem 1rem;display:flex;flex-direction:column;gap:.5rem;flex:1}
+  .stay__name{font-weight:500;font-size:.98rem;line-height:1.25}
+  .stay__meta{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;font-size:.74rem;color:rgba(255,255,255,.6)}
+  .chip{border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:.16rem .5rem}
+  .score{background:var(--teal-bright);color:var(--ink);border-radius:6px;padding:.16rem .42rem;font-family:var(--font-mono);font-weight:700;font-size:.72rem}
+  .stay__foot{margin-top:auto;display:flex;align-items:flex-end;justify-content:space-between;gap:.6rem;padding-top:.4rem}
+  .stay__price{font-family:var(--font-mono);font-weight:700;font-size:1.5rem;line-height:1}
+  .stay__price small{display:block;font-family:var(--font-text);font-weight:400;font-size:.68rem;color:rgba(255,255,255,.55);margin-top:.25rem}
+  .stay__cta{flex:none;border:none;border-radius:999px;background:var(--teal);color:#fff;font-family:var(--font-text);font-weight:500;font-size:.84rem;padding:.55rem .9rem;cursor:pointer;white-space:nowrap;text-decoration:none}
+  .stay__cta:hover{background:var(--teal-bright);color:var(--ink)}
+  .empty{max-width:1120px;margin:1rem auto;padding:2rem var(--pad);text-align:center;color:rgba(255,255,255,.6)}
+  .srch-foot{border-top:1px solid rgba(255,255,255,.1);padding:1.4rem var(--pad);text-align:center;color:rgba(255,255,255,.5);font-size:.82rem}
+  @media (max-width:680px){ .panel__grid{grid-template-columns:1fr} .srch-surprise{width:100%} }
+</style>
+</head>
+<body>
+<header class="srch-nav">
+  <a class="brand" href="index.html" aria-label="MEG Travel">
+    <span class="brand__mark" aria-hidden="true" style="background:rgba(255,255,255,.16)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5 2.5 13 9l7.5 2.5L13 14l-2.5 7L8 14 .5 11.5 8 9z"/></svg></span>
+    <span class="brand__name">MEG&nbsp;Travel</span>
+  </a>
+  <a class="srch-back" href="index.html"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg> Home</a>
+</header>
+
+<section class="srch-head">
+  <p class="srch-eyebrow">Ricerca · beta</p>
+  <h1 class="srch-title">Dove ti porta<br>il tuo budget?</h1>
+  <p class="srch-sub">Sposta il budget: ti mostro dove dormire davvero, sotto quella cifra. Prezzi e link reali.</p>
+</section>
+
+<div class="panel">
+  <div class="panel__grid">
+    <div class="field">
+      <div class="field__label"><span>Budget per dormire</span><b id="budget-out">130€</b></div>
+      <input id="budget" class="srch-slider" type="range" min="40" max="200" value="130" step="5" aria-label="Budget per dormire in euro">
+    </div>
+    <div class="field">
+      <div class="field__label"><span>Dove</span></div>
+      <select id="dest" class="srch-select" aria-label="Destinazione">
+        <option value="all">Tutte le mete</option>
+        <option value="marrakech">Marrakech</option>
+        <option value="tenerife">Tenerife</option>
+        <option value="atene">Atene</option>
+        <option value="lisbona">Lisbona</option>
+        <option value="cracovia">Cracovia</option>
+        <option value="valencia">Valencia</option>
+      </select>
+    </div>
+    <button id="surprise" class="srch-surprise" type="button">Sorprendimi ✦</button>
+  </div>
+  <p class="panel__note" id="ctx-note">Ricerca reale (dati Booking.com) · weekend campione 10–12 lug · 2 persone, 2 notti · solo alloggio (il volo arriva presto). La ricerca con date libere in tempo reale è la prossima tappa.</p>
+</div>
+
+<p class="results-head" id="results-head">Carico…</p>
+<div class="grid" id="grid"></div>
+<div class="empty" id="empty" style="display:none">Nessun letto sotto questo budget qui. Alza un po' il budget o cambia meta. 👋</div>
+
+<footer class="srch-foot">MEG Travel — parti con quello che hai · dati Booking.com</footer>
+
+<script src="cerca.js"></script>
+</body>
+</html>
