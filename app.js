@@ -94,8 +94,10 @@
   }
 
   /* ---- waitlist form ----
-     NOTE: not wired to storage yet. Hook up a backend (Formspree / Resend /
-     a small Railway endpoint / Google Sheet) before launch so emails are saved. */
+     Real capture via Formspree: set FORM_ENDPOINT to your form URL
+     (https://formspree.io/f/XXXXXXXX). Until it is set, submissions are only
+     kept in the browser (localStorage) and are NOT collected anywhere. */
+  var FORM_ENDPOINT = "https://formspree.io/f/meebqvwd"; // Formspree — raccoglie le email della lista
   var form = document.getElementById("signup");
   var email = document.getElementById("email");
   var hint = document.getElementById("signup-hint");
@@ -103,20 +105,29 @@
     form.addEventListener("submit", function (ev) {
       ev.preventDefault();
       var v = (email.value || "").trim();
-      var ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
-      if (!ok) {
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) {
         hint.textContent = "Controlla l'email — manca qualcosa.";
         hint.className = "signup__hint is-err";
         email.focus();
         return;
       }
-      var list = [];
-      try { list = JSON.parse(localStorage.getItem("meg_waitlist") || "[]"); } catch (e) { list = []; }
-      list.push(v);
-      try { localStorage.setItem("meg_waitlist", JSON.stringify(list)); } catch (e) {}
-      form.classList.add("is-done");
-      hint.textContent = "Ci sei. Ti scriviamo noi quando puoi partire ✈";
-      hint.className = "signup__hint is-ok";
+      try {
+        var list = JSON.parse(localStorage.getItem("meg_waitlist") || "[]");
+        list.push(v); localStorage.setItem("meg_waitlist", JSON.stringify(list));
+      } catch (e) {}
+      function done() {
+        form.classList.add("is-done");
+        hint.textContent = "Ci sei. Ti scriviamo noi quando puoi partire ✈";
+        hint.className = "signup__hint is-ok";
+      }
+      if (FORM_ENDPOINT) {
+        hint.textContent = "Un attimo…"; hint.className = "signup__hint";
+        fetch(FORM_ENDPOINT, { method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" }, body: JSON.stringify({ email: v }) })
+          .then(function (r) { if (r.ok) { done(); } else { throw new Error("bad"); } })
+          .catch(function () { hint.textContent = "Ops, riprova tra un attimo."; hint.className = "signup__hint is-err"; });
+      } else {
+        done();
+      }
     });
   }
 })();
