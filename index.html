@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MEG Travel — parti con quello che hai</title>
+<meta name="description" content="Dimmi quanto hai e quando. Ti trovo dove andare: volo e letto in un prezzo solo, sotto il tuo budget. Anche a rate.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#lista">Vai all'iscrizione</a>
+
+<header class="nav" id="nav">
+  <div class="container nav__inner">
+    <a class="brand" href="#top" aria-label="MEG Travel, home">
+      <span class="brand__mark" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5 2.5 13 9l7.5 2.5L13 14l-2.5 7L8 14 .5 11.5 8 9z"/></svg></span>
+      <span class="brand__name">MEG&nbsp;Travel</span>
+    </a>
+    <nav class="nav__links">
+      <a href="#come-funziona">Come funziona</a>
+      <a class="btn btn--pill" href="#lista">Accesso anticipato</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero__bg" aria-hidden="true">
+      <img class="hero__img" data-i="0" alt="" src="https://images.unsplash.com/photo-1719049811676-72c3409df39d?auto=format&fit=crop&w=1600&q=80">
+      <img class="hero__img" data-i="1" alt="" src="https://images.unsplash.com/photo-1719401542194-95139aed215c?auto=format&fit=crop&w=1600&q=80">
+      <img class="hero__img is-on" data-i="2" alt="" src="https://images.unsplash.com/photo-1748279944004-f1d733dc711b?auto=format&fit=crop&w=1600&q=80">
+      <img class="hero__img" data-i="3" alt="" src="https://images.unsplash.com/photo-1603565816030-6b389eeb23cb?auto=format&fit=crop&w=1600&q=80">
+      <img class="hero__img" data-i="4" alt="" src="https://images.unsplash.com/photo-1605182054023-17d71f44aa11?auto=format&fit=crop&w=1600&q=80">
+      <img class="hero__img" data-i="5" alt="" src="https://images.unsplash.com/photo-1561642769-1bca263542e0?auto=format&fit=crop&w=1600&q=80">
+      <div class="hero__scrim"></div>
+    </div>
+
+    <div class="hero__content container">
+      <p class="eyebrow">In arrivo — 2026</p>
+      <h1 class="hero__title" id="hero-title">Parti con<br>quello che hai.</h1>
+      <p class="hero__lead">Dimmi quanto hai. Ti dico dove andare — volo e letto in un prezzo solo, sotto il tuo budget.</p>
+    </div>
+
+    <div class="hero__console container">
+      <div class="console" aria-live="polite">
+        <div class="console__left">
+          <div class="console__budget">
+            <span class="console__ho">Ho</span>
+            <span class="console__amt"><span class="console__cur">€</span><span id="amt">120</span></span>
+          </div>
+          <input id="slider" class="console__slider" type="range" min="60" max="500" value="120" step="1" autocomplete="off" aria-label="Il tuo budget in euro">
+        </div>
+        <div class="console__right">
+          <div class="console__dest">
+            <span class="console__pin" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.4"/></svg>
+            </span>
+            <span class="console__city" id="city">Lisbona</span>
+            <span class="console__country" id="country">Portogallo</span>
+          </div>
+          <div class="console__meta"><span class="console__allin" id="allin">118€</span> tutto incluso · <span id="rate">3 rate da 39€</span></div>
+          <a class="btn btn--primary btn--big" href="#lista">Richiedi l'accesso anticipato</a>
+          <p class="console__note">Esempi indicativi — i prezzi veri li calcola l'app.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pain" aria-labelledby="pain-title">
+    <div class="container pain__inner">
+      <p class="eyebrow eyebrow--light">Il problema</p>
+      <h2 class="pain__title reveal" id="pain-title">Un weekend via non dovrebbe<br>richiedere dieci schede aperte.</h2>
+      <p class="pain__body reveal">Skyscanner per il volo. Booking per il letto. Google per il dubbio.
+        E alla fine non sai mai se hai pagato troppo.</p>
+
+      <div class="collapse" id="collapse" aria-hidden="true">
+        <div class="collapse__tabs">
+          <span class="tab" style="--i:0">Skyscanner</span>
+          <span class="tab" style="--i:1">Booking.com</span>
+          <span class="tab" style="--i:2">Google Flights</span>
+          <span class="tab" style="--i:3">Ryanair</span>
+          <span class="tab" style="--i:4">Hostelworld</span>
+          <span class="tab" style="--i:5">Maps</span>
+        </div>
+        <div class="collapse__card">
+          <div class="mini">
+            <div class="mini__city">Valencia <span>Spagna</span></div>
+            <div class="mini__price">98€</div>
+          </div>
+          <div class="mini__meta">volo a/r 54€ · 2 notti 44€ · ven–dom</div>
+          <div class="mini__tag">una risposta, non dieci</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="steps" id="come-funziona" aria-labelledby="steps-title">
+    <div class="container">
+      <p class="eyebrow reveal">Come funziona</p>
+      <h2 class="section__title reveal" id="steps-title">Tre mosse. Poi fai la valigia.</h2>
+      <ol class="steps__grid">
+        <li class="step reveal">
+          <span class="step__no">01</span>
+          <h3 class="step__h">Dì il budget</h3>
+          <p class="step__p">Quanto hai, da dove parti, quando. Tre tap, niente moduli infiniti.</p>
+        </li>
+        <li class="step reveal">
+          <span class="step__no">02</span>
+          <h3 class="step__h">Scegli tra poche</h3>
+          <p class="step__p">Niente liste da 300 risultati: solo viaggi veri, già sotto il tuo budget.</p>
+        </li>
+        <li class="step reveal">
+          <span class="step__no">03</span>
+          <h3 class="step__h">Parti</h3>
+          <p class="step__p">Prenoti col fornitore in un tap. Paghi a rate dove si può.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="features" aria-label="Cosa rende diverso MEG Travel">
+    <div class="container features__list">
+      <article class="feature reveal">
+        <div class="feature__text">
+          <h2 class="feature__h">Tutto incluso.<br>Davvero.</h2>
+          <p class="feature__p">Volo andata e ritorno più il letto, in un unico prezzo.
+            Quello che vedi è quello che spendi.</p>
+        </div>
+        <div class="feature__art" aria-hidden="true">
+          <div class="pricecard">
+            <div class="pricecard__row"><span>Volo a/r</span><span>54€</span></div>
+            <div class="pricecard__row"><span>2 notti</span><span>44€</span></div>
+            <div class="pricecard__sum"><span>Tutto incluso</span><span>98€</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="feature feature--rev reveal">
+        <div class="feature__text">
+          <h2 class="feature__h">Poche scelte.<br>Quelle giuste.</h2>
+          <p class="feature__p">Ti mostriamo 3–5 mete, non 300. Decidere ci mette un attimo,
+            non un pomeriggio.</p>
+        </div>
+        <div class="feature__art" aria-hidden="true">
+          <div class="stacklist">
+            <span class="stacklist__row stacklist__row--on">Valencia · 98€</span>
+            <span class="stacklist__row">Cracovia · 76€</span>
+            <span class="stacklist__row">Porto · 112€</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="feature reveal">
+        <div class="feature__text">
+          <h2 class="feature__h">Pagalo<br>come puoi.</h2>
+          <p class="feature__p">Mostriamo le opzioni a rate dove il fornitore le offre.
+            Niente sorprese, niente promesse finte.</p>
+        </div>
+        <div class="feature__art" aria-hidden="true">
+          <div class="ratecard">
+            <div class="ratecard__big">98€</div>
+            <div class="ratecard__pill">oppure 3 rate da 33€</div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="showcase" aria-labelledby="showcase-title">
+    <div class="container showcase__inner">
+      <div class="showcase__copy">
+        <p class="eyebrow eyebrow--light reveal">Anteprima</p>
+        <h2 class="showcase__title reveal" id="showcase-title">L'app, in<br>una schermata.</h2>
+        <p class="showcase__p reveal">Apri, dici quanto hai, parti. Nessun account, nessun rumore.</p>
+      </div>
+
+      <div class="phone reveal" aria-hidden="true">
+        <div class="phone__screen">
+          <div class="phone__head">
+            <span class="phone__brand"><span class="phone__dot"></span> MEG Travel</span>
+          </div>
+          <p class="phone__hl">Ho <em>€120</em>.<br>Portami via questo weekend.</p>
+          <div class="phone__pills">
+            <span>da Milano</span><span>questo weekend</span><span>1 persona</span>
+          </div>
+          <button class="phone__go" type="button">Portami via</button>
+          <div class="phone__results">
+            <div class="trip trip--top">
+              <span class="trip__tag">il più economico</span>
+              <div class="trip__row"><span class="trip__city">Cracovia <i>Polonia</i></span><span class="trip__price">76€</span></div>
+              <div class="trip__meta">volo a/r 38€ · 2 notti 38€</div>
+              <div class="trip__foot"><span>ven 4 – dom 6 lug</span><span class="trip__rate">3 rate da 25€</span></div>
+            </div>
+            <div class="trip">
+              <div class="trip__row"><span class="trip__city">Valencia <i>Spagna</i></span><span class="trip__price">98€</span></div>
+              <div class="trip__meta">volo a/r 54€ · 2 notti 44€</div>
+              <div class="trip__foot"><span>ven 27 – dom 29 giu</span><span class="trip__rate">3 rate da 33€</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="lista" aria-labelledby="cta-title">
+    <div class="container cta__inner">
+      <p class="eyebrow reveal">Accesso anticipato</p>
+      <h2 class="cta__title reveal" id="cta-title">All'inizio<br>saremo in pochi.</h2>
+      <p class="cta__p reveal">Entra nella lista. Ti avvisiamo noi quando puoi partire — niente spam, promesso.</p>
+
+      <form class="signup reveal" id="signup" novalidate>
+        <div class="signup__field">
+          <label class="sr-only" for="email">La tua email</label>
+          <input id="email" name="email" type="email" inputmode="email" autocomplete="email"
+                 placeholder="la-tua@email.it" required>
+          <button class="btn btn--primary" type="submit">Voglio l'accesso</button>
+        </div>
+        <p class="signup__hint" id="signup-hint" role="status"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="container foot__inner">
+    <span class="foot__brand">MEG Travel</span>
+    <span class="foot__tag">Parti con quello che hai.</span>
+    <span class="foot__meta">Un progetto di MEG Web Studio · 2026</span>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
